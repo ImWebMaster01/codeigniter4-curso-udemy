@@ -1,52 +1,55 @@
 <?php
-#ubicación de los controladores
+
 namespace App\Controllers;
 
-#controladores usados en esta clase
+use App\Models\CategoriaModel;
 use App\Controllers\BaseController;
-use App\Models\PeliculasModel;
+use CodeIgniter\HTTP\ResponseInterface;
 
-Class PeliculaCo extends BaseController{
+class CategoriaCo extends BaseController
+{
+    public function index()
+    {
+        //cargar controlador
+        $categoriaMo=new CategoriaModel();
 
-    public function index(){
+         #obtener todos los registros de la tabla de la DB
+         $data=['categoria'=>$categoriaMo->findAll()];
 
-        $peliculaMo=new PeliculasModel();
-
-        #obtener todos los registros de la tabla de la DB
-        $data=['pelicula'=>$peliculaMo->findAll()];
-
-        #mandar datos a la vista
-        return view('peliculas/index',$data);
-
+         #mandar datos a la vista
+         return view('categorias/index',$data);
+ 
     }
 
     public function show($id){
-        $peliculaMo=new PeliculasModel();
+        $categoriaMo=new CategoriaModel();
+
        // $peliculaMo->find($id);
 
-        $dataContent=['pelicula'=>$peliculaMo->find($id)];
+        $dataContent=['categoria'=>$categoriaMo->find($id)];
 
 
-        return view('peliculas/show',$dataContent);
+        return view('categorias/show',$dataContent);
 
     }
 
+
     public function new(){
-        $peliculaMo=new PeliculasModel();
+        $categoriaMo=new CategoriaModel();
 
 
-        return view('peliculas/new');
+        return view('categorias/new');
 
     }
 
     public function create(){
 
         #instancia del modelo
-        $peliculaMo=new PeliculasModel();
+        $categoriaMo=new CategoriaModel();
 
         #insertar en la base de datos el
         #array con los datos recibidos del formulario
-        $peliculaMo->insert(
+        $categoriaMo->insert(
             [
                 'titulo'=> $this->request->getPost('titulo'),
                 'descripcion'=>$this->request->getPost('descripcion')
@@ -58,24 +61,23 @@ Class PeliculaCo extends BaseController{
     public function edit($id){
 
         #instancia del modelo
-        $peliculaMo=new PeliculasModel();
+        $categoriaMo=new CategoriaModel();
 
         # obtengo el registro de la pelicula buscada 
         # y lo guardo en un array con el indice de 'pelicula'
-        $dataContent=['pelicula'=>$peliculaMo->find($id)];
+        $dataContent=['categoria'=>$categoriaMo->find($id)];
 
-        return view('peliculas/edit',$dataContent);
+        return view('categorias/edit',$dataContent);
     }
-
 
     public function update($id){
 
         #instancia del modelo
-        $peliculaMo=new PeliculasModel();
+        $categoriaMo=new CategoriaModel();
 
         #actualizar en la base de datos el
         #array con los datos recibidos del formulario
-        $peliculaMo->update(
+        $categoriaMo->update(
             $id,
         [
                 'titulo'=> $this->request->getPost('titulo'),
@@ -88,13 +90,10 @@ Class PeliculaCo extends BaseController{
     public function delete($id){
 
         #instancia del modelo
-        $peliculaMo=new PeliculasModel();
+        $categoriaMo=new CategoriaModel();
 
         #eliminar registro en la base de datos
-        $peliculaMo->delete($id);
+        $categoriaMo->delete($id);
 
     }
-
-
-
 }

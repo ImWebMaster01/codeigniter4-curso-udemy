@@ -14,3 +14,4 @@ $routes->get('/', 'PeliculaCo::index');
 
 
 $routes->presenter('pelicula',['controller' => 'peliculaCo']);
+$routes->presenter('categoria',['controller' => 'categoriaCo']);

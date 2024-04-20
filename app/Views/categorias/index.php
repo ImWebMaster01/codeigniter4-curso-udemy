@@ -1,6 +1,4 @@
 <?= $this->extend('template/template')?>
-
-
 <?= $this->section('titulo')?>  Página de inicio  <?php echo $this->endSection()?>
 <?= $this->section('contenido')?>
 <style type='text/css'>
@@ -14,7 +12,7 @@ table #delete{padding: 0px 0.5em;text-align: center;height: 2em;}
 </style>
 
     <div>
-    <a href="/pelicula/new">Crear película</a>
+    <a href="/categoria/new">Crear Categoría</a>
 
         <table>
          <thead>
@@ -25,20 +23,20 @@ table #delete{padding: 0px 0.5em;text-align: center;height: 2em;}
             </tr>
         </thead>
             <?php
-            foreach($pelicula as $key=> $p):
+            foreach($categoria as $key=> $c):
                 echo
                 "<tr>".
-                "<td>".$p['titulo']."</td>
-                <td>".$p['descripcion']."</td>
+                "<td>".$c['titulo']."</td>
+                <td>".$c['descripcion']."</td>
                  <td>
-                    <a href='/pelicula/show/".$p['id']."'>Ver</a>
+                    <a href='/categoria/show/".$c['id']."'>Ver</a>
                 </td>
                 <td>
-                    <a href='/pelicula/edit/".$p['id']."'>Editar</a>
+                    <a href='/categoria/edit/".$c['id']."'>Editar</a>
                 </td>
                 <td>
 
-                    <form action='/pelicula/delete/".$p['id']."' method='post'>
+                    <form action='/categoria/delete/".$c['id']."' method='post'>
                         <input id='delete' type='submit' value='Eliminar'>
                     </form>
 
