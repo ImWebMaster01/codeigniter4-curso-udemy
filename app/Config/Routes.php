@@ -13,5 +13,14 @@ $routes->get('/', 'PeliculaCo::index');
 //$routes->get('pelicula','PeliculaCo::index');
 
 
-$routes->presenter('pelicula',['controller' => 'peliculaCo']);
-$routes->presenter('categoria',['controller' => 'categoriaCo']);
+
+
+#Agrupamos rutas
+$routes->group('dashboard',function($routes){
+
+    $routes->presenter('pelicula',['controller' => 'peliculaCo']);
+    $routes->presenter('categoria',['controller' => 'categoriaCo']);
+
+   // $routes->get('test','PeliculaCo::test',['as'=>'test']);
+
+});

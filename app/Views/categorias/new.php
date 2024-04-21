@@ -1,6 +1,6 @@
 <?= $this->extend('template/template')?>
 <?= $this->section('contenido')?>
-<form action="/categoria/create" method="post">
+<form action="/dashboard/categoria/create" method="post">
     <fieldset>
         <legend>Crear categoría</legend>
             <label for="titulo">Título</label>

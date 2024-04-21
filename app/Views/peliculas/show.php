@@ -13,10 +13,10 @@
 
 <table>
 <td>
-    <a href='/pelicula/edit/<?=$pelicula['id']?>'>Editar</a>
+    <a href='/dashboard/pelicula/edit/<?=$pelicula['id']?>'>Editar</a>
 </td>
 <td>
-    <form action='/pelicula/delete/<?=$pelicula['id']?>' method='post'>
+    <form action='/dashboard/pelicula/delete/<?=$pelicula['id']?>' method='post'>
         <input id='delete' type='submit' value='Eliminar'>
     </form>
 </td>

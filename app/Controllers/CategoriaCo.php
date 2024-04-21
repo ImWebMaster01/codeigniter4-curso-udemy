@@ -55,7 +55,7 @@ class CategoriaCo extends BaseController
                 'descripcion'=>$this->request->getPost('descripcion')
             ] );
 
-        ;
+            return redirect()->to('/dashboard/categoria/');
     }
 
     public function edit($id){
@@ -84,7 +84,7 @@ class CategoriaCo extends BaseController
                 'descripcion'=>$this->request->getPost('descripcion')
             ] );
 
-        ;
+            return redirect()->to('/dashboard/categoria/');
     }
 
     public function delete($id){
@@ -94,6 +94,8 @@ class CategoriaCo extends BaseController
 
         #eliminar registro en la base de datos
         $categoriaMo->delete($id);
+
+        return redirect()->back();
 
     }
 }

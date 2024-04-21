@@ -1,6 +1,6 @@
 <?= $this->extend('template/template')?>
 <?= $this->section('contenido')?>
-<form action="/pelicula/create" method="post">
+<form action="/dashboard/pelicula/create" method="post">
     <fieldset>
         <legend>Crear película</legend>
             <label for="titulo">Título</label>

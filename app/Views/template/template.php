@@ -21,7 +21,7 @@
                         <a class="nav-link active" aria-current="page" href="<?php echo base_url()?>">Películas</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active" href="<?php echo base_url()?>categorias">Categorías</a>
+                        <a class="nav-link active" href="<?php echo base_url()?>dashboard/categoria">Categorías</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">

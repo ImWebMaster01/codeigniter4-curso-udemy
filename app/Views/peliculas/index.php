@@ -14,7 +14,7 @@ table #delete{padding: 0px 0.5em;text-align: center;height: 2em;}
 </style>
 
     <div>
-    <a href="/pelicula/new">Crear película</a>
+    <a href="/dashboard/pelicula/new">Crear película</a>
 
         <table>
          <thead>
@@ -31,14 +31,14 @@ table #delete{padding: 0px 0.5em;text-align: center;height: 2em;}
                 "<td>".$p['titulo']."</td>
                 <td>".$p['descripcion']."</td>
                  <td>
-                    <a href='/pelicula/show/".$p['id']."'>Ver</a>
+                    <a href='/dashboard/pelicula/show/".$p['id']."'>Ver</a>
                 </td>
                 <td>
-                    <a href='/pelicula/edit/".$p['id']."'>Editar</a>
+                    <a href='/dashboard/pelicula/edit/".$p['id']."'>Editar</a>
                 </td>
                 <td>
 
-                    <form action='/pelicula/delete/".$p['id']."' method='post'>
+                    <form action='/dashboard/pelicula/delete/".$p['id']."' method='post'>
                         <input id='delete' type='submit' value='Eliminar'>
                     </form>
 

@@ -51,8 +51,8 @@ Class PeliculaCo extends BaseController{
                 'titulo'=> $this->request->getPost('titulo'),
                 'descripcion'=>$this->request->getPost('descripcion')
             ] );
+            return redirect()->to('/dashboard/pelicula/');
 
-        ;
     }
 
     public function edit($id){
@@ -82,7 +82,9 @@ Class PeliculaCo extends BaseController{
                 'descripcion'=>$this->request->getPost('descripcion')
             ] );
 
-        ;
+            //return redirect()->back();
+            return redirect()->to('/dashboard/pelicula/');
+
     }
 
     public function delete($id){
@@ -93,8 +95,14 @@ Class PeliculaCo extends BaseController{
         #eliminar registro en la base de datos
         $peliculaMo->delete($id);
 
-    }
+        return redirect()->back();
 
+    }
+/*
+    public  function test(){
+        echo 'test';
+    }
+*******/
 
 
 }

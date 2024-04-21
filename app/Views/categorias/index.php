@@ -12,7 +12,7 @@ table #delete{padding: 0px 0.5em;text-align: center;height: 2em;}
 </style>
 
     <div>
-    <a href="/categoria/new">Crear Categoría</a>
+    <a href="/dashboard/categoria/new">Crear Categoría</a>
 
         <table>
          <thead>
@@ -29,14 +29,14 @@ table #delete{padding: 0px 0.5em;text-align: center;height: 2em;}
                 "<td>".$c['titulo']."</td>
                 <td>".$c['descripcion']."</td>
                  <td>
-                    <a href='/categoria/show/".$c['id']."'>Ver</a>
+                    <a href='/dashboard/categoria/show/".$c['id']."'>Ver</a>
                 </td>
                 <td>
-                    <a href='/categoria/edit/".$c['id']."'>Editar</a>
+                    <a href='/dashboard/categoria/edit/".$c['id']."'>Editar</a>
                 </td>
                 <td>
 
-                    <form action='/categoria/delete/".$c['id']."' method='post'>
+                    <form action='/dashboard/categoria/delete/".$c['id']."' method='post'>
                         <input id='delete' type='submit' value='Eliminar'>
                     </form>
 

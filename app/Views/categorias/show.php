@@ -13,10 +13,10 @@
 
 <table>
 <td>
-    <a href='/categoria/edit/<?=$categoria['id']?>'>Editar</a>
+    <a href='/dashboard/categoria/edit/<?=$categoria['id']?>'>Editar</a>
 </td>
 <td>
-    <form action='/categoria/delete/<?=$categoria['id']?>' method='post'>
+    <form action='/dashboard/categoria/delete/<?=$categoria['id']?>' method='post'>
         <input id='delete' type='submit' value='Eliminar'>
     </form>
 </td>
