@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
 use App\Models\CategoriaModel;
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
+
 
 class CategoriaCo extends BaseController
 {
@@ -17,7 +17,7 @@ class CategoriaCo extends BaseController
          $data=['categoria'=>$categoriaMo->findAll()];
 
          #mandar datos a la vista
-         return view('categorias/index',$data);
+         return view('admin/categorias/index',$data);
  
     }
 
@@ -29,7 +29,7 @@ class CategoriaCo extends BaseController
         $dataContent=['categoria'=>$categoriaMo->find($id)];
 
 
-        return view('categorias/show',$dataContent);
+        return view('admin/categorias/show',$dataContent);
 
     }
 
@@ -38,7 +38,7 @@ class CategoriaCo extends BaseController
         $categoriaMo=new CategoriaModel();
 
 
-        return view('categorias/new');
+        return view('admin/categorias/new');
 
     }
 
@@ -67,7 +67,7 @@ class CategoriaCo extends BaseController
         # y lo guardo en un array con el indice de 'pelicula'
         $dataContent=['categoria'=>$categoriaMo->find($id)];
 
-        return view('categorias/edit',$dataContent);
+        return view('admin/categorias/edit',$dataContent);
     }
 
     public function update($id){

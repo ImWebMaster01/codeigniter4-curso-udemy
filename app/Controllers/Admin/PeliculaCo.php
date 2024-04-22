@@ -1,6 +1,6 @@
 <?php
 #ubicación de los controladores
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
 #controladores usados en esta clase
 use App\Controllers\BaseController;
@@ -16,7 +16,7 @@ Class PeliculaCo extends BaseController{
         $data=['pelicula'=>$peliculaMo->findAll()];
 
         #mandar datos a la vista
-        return view('peliculas/index',$data);
+        return view('admin/peliculas/index',$data);
 
     }
 
@@ -27,7 +27,7 @@ Class PeliculaCo extends BaseController{
         $dataContent=['pelicula'=>$peliculaMo->find($id)];
 
 
-        return view('peliculas/show',$dataContent);
+        return view('admin/peliculas/show',$dataContent);
 
     }
 
@@ -35,7 +35,7 @@ Class PeliculaCo extends BaseController{
         $peliculaMo=new PeliculasModel();
 
 
-        return view('peliculas/new');
+        return view('admin/peliculas/new');
 
     }
 
@@ -64,7 +64,7 @@ Class PeliculaCo extends BaseController{
         # y lo guardo en un array con el indice de 'pelicula'
         $dataContent=['pelicula'=>$peliculaMo->find($id)];
 
-        return view('peliculas/edit',$dataContent);
+        return view('admin/peliculas/edit',$dataContent);
     }
 
 
@@ -98,11 +98,7 @@ Class PeliculaCo extends BaseController{
         return redirect()->back();
 
     }
-/*
-    public  function test(){
-        echo 'test';
-    }
-*******/
+
 
 
 }
